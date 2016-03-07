@@ -1,3 +1,6 @@
+/* Tests for Fibonacci Numbers and Primality Functions
+   Author: William Nguyen */
+
 #include <stdio.h>
 #include <assert.h>
 #include "BuzzFizz.h"
@@ -5,6 +8,9 @@
 
 int main(int argc, char *argv[]) {
 
+   printf("Checking n = -1 is invalid input...\n");
+   assert(fib(-1) == INVALID_INPUT);
+   printf("Test passed!\n");
    printf("Checking F(0) is 0...\n");
    assert(fib(0) == 0);
    printf("Test passed!\n");
@@ -147,8 +153,8 @@ int main(int argc, char *argv[]) {
    printf("Checking F(46) is 1836311903...\n");
    assert(fib(46) == 1836311903);
    printf("Test passed!\n");
-   printf("Checking F(47) is 2971215073...\n");
-   assert(fib(47) == (unsigned int) 2971215073);
+   printf("Checking n = 47 is invalid input...\n");
+   assert(fib(47) == INVALID_INPUT);
    printf("Test passed!\n");
 
    printf("Checking 0 is not prime...\n");
@@ -173,5 +179,6 @@ int main(int argc, char *argv[]) {
    assert(!isPrime(121));
    printf("Test passed!\n");
 
+   printf("All tests passed!\n");
    return 0;
 }
