@@ -29,18 +29,17 @@ int fib(int n) {
 
       // Determine divisibility or primality of F(n)
       if (Fn % 3 == 0) {
-          printf("Buzz");
+          printf("Buzz\n");
           if (Fn % 5 == 0) {
-              printf("Fizz"); // Divisibility by both 3 and 5
+              printf("Fizz\n"); // Divisibility by both 3 and 5
           }
       } else if (Fn % 5 == 0) {
-          printf("Fizz");
+          printf("Fizz\n");
       } else if (isPrime(Fn)) {
-         printf("BuzzFizz");
+         printf("BuzzFizz\n");
       } else {
          printf("%d\n", Fn);
       }
-      printf("\n");
 
       free(seq);
    } else {
