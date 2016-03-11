@@ -2,7 +2,6 @@
    Author: William Nguyen */
 
 #include <stdio.h>
-#include <stdlib.h>
 #include "BuzzFizz.h"
 
 #define TRUE 1
@@ -12,20 +11,17 @@
 // Function to generate Fibonacci sequence and print messages
 // dependent upon divisibility and primality of F(n)
 int fib(int n) {
-   int i, Fn, *seq;
+   int Fn, a, tmp;
 
    if (n >= 0 && n <= 46) {
-      seq = malloc(sizeof(int) * (n + 1));
-
-      // Generate first n Fibonacci numbers, where 0 <= n <= 46
-      seq[0] = 0; // F(0) = 0
-      if (n > 0) {
-         seq[1] = 1; // F(1) = 1
-         for (i = 2; i <= n; i++) {
-            seq[i] = seq[i - 1] + seq[i - 2];
-         }
+      // Determine value of F(n), where 0 <= n <= 46
+      Fn = 0; // F(0)
+      a = 1;
+      while (n-- > 0) {
+         tmp = Fn;
+         Fn += a;
+         a = tmp;
       }
-      Fn = seq[n];
 
       // Determine divisibility or primality of F(n)
       if (Fn % 3 == 0) {
@@ -40,8 +36,6 @@ int fib(int n) {
       } else {
          printf("%d\n", Fn);
       }
-
-      free(seq);
    } else {
       printf("n must be an integer from 0 to 46\n");
       Fn = INVALID_INPUT;
