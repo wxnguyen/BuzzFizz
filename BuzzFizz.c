@@ -47,15 +47,14 @@ int fib(int n) {
 int isPrime(int num) {
    int i, prime;
 
-   if (num < 2 || (num != 2 && num % 2 == 0)) {
+   if (num < 2 || (num != 2 && num % 2 == 0) || (num != 3 && num % 3 == 0)) {
       prime = FALSE;
    } else {
       prime = TRUE;
-      // Could set i = 7 to save 2 iterations since fib() already
-      // checks for divisibility by 3 and 5, but i = 3 so
-      // that isPrime() can be a stand-alone function.
-      for (i = 3; i * i <= num && prime; i += 2) { 
-         if (num % i == 0) {
+      // The modulo operation should be skipped for
+      // every i that is even or a multiple of 3.
+      for (i = 5; i * i <= num && prime; i += 6) { 
+         if (num % i == 0 || num % (i + 2) == 0) {
             prime = FALSE;
          }
       }

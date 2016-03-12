@@ -175,6 +175,12 @@ int main(int argc, char *argv[]) {
    printf("Checking 5 is prime...\n");
    assert(isPrime(5));
    printf("Test passed!\n");
+   printf("Checking 46 is not prime...\n");
+   assert(!isPrime(46));
+   printf("Test passed!\n");
+   printf("Checking 47 is prime...\n");
+   assert(isPrime(47));
+   printf("Test passed!\n");
    printf("Checking 121 is not prime...\n");
    assert(!isPrime(121));
    printf("Test passed!\n");
