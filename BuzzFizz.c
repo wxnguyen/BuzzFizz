@@ -11,17 +11,16 @@
 // Function to generate nth Fibonacci number and print messages
 // dependent upon divisibility and primality of F(n)
 int fib(int n) {
-   int Fn, i, a, tmp;
+   int Fm, Fn, i, tmp;
 
    if (n >= 0 && n <= 46) {
       // Determine value of F(n), where 0 <= n <= 46
+      Fm = 1; // F(n-1)
       Fn = 0; // F(0)
-      a = 1;
-      i = n;
-      while (i-- > 0) {
+      for (i = 0; i < n; i++) {
          tmp = Fn;
-         Fn += a;
-         a = tmp;
+         Fn += Fm;
+         Fm = tmp;
       }
 
       // F(n) is divisible by F(k) if n is a multiple of k. Thus
