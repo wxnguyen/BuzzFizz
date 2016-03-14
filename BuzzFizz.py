@@ -23,6 +23,7 @@ def fib(n):
    else:
       print("n must be an integer from 0 to 46")
       Fn = -1
+
    return Fn
 
 def isPrime(num):
@@ -34,4 +35,5 @@ def isPrime(num):
          if num % i == 0 or num % (i + 2) == 0:
             prime = False
          i += 6
+
    return prime
